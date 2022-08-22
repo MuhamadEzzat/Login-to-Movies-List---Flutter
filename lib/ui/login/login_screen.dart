@@ -13,7 +13,13 @@ class LoginScreen extends GetView<LoginController>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+        centerTitle: true,
+        backgroundColor: Colors.blue[900],
+      ),
       body: Column(
         children: [
           Expanded(
@@ -114,12 +120,6 @@ class LoginScreen extends GetView<LoginController>{
       print(isLoggedin);
         if (isLoggedin == true){
           Navigator.popAndPushNamed(context, Routes.movies);
-        // showDialog(
-        //     context: context,
-        //     builder: (BuildContext context){
-        //       return myAlert(context);
-        //     }
-        // );
       }else{
         ScaffoldMessenger.of(context).showSnackBar(mySnack());
       }

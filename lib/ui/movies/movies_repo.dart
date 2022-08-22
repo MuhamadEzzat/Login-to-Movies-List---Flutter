@@ -13,13 +13,6 @@ final AppHttpClient _client = Get.find();
 
     response = await _client.get();
 
-    if (response.statusCode == 200){
-      print(response);
-      print("safddgs");
-      return response;
-    }else{
-      print("safddgs");
-      return response;
-    }
+    return response;
   }
 }

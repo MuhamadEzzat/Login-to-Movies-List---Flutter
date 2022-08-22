@@ -3,6 +3,7 @@ import 'package:loginexample/ui/movies/movies_controller.dart';
 import 'package:loginexample/data/dto/movie_data.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:loginexample/ui/shared_widgets/spinner_widget.dart';
 
 class MoviesScreen extends GetView<MoviesController>{
 
@@ -22,7 +23,7 @@ class MoviesScreen extends GetView<MoviesController>{
               future: myMovies(),
               builder: (context, snapshot){
                 var count = snapshot.data?.length ?? 0;
-                if (count > 0){
+                if (count >= 1){
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListView.builder(
@@ -100,12 +101,12 @@ class MoviesScreen extends GetView<MoviesController>{
                               icon: Icon(Icons.refresh_rounded),
                               color: Colors.blue,
                             )
-                        )
+                        ),
+                       Spinner_Widget()
                       ]
                   );
                 }
               }),
-          //Spinner_Widget()
         ],
       ),
     );
